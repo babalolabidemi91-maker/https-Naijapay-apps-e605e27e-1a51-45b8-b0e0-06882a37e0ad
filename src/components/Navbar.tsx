@@ -1,6 +1,7 @@
 import React from 'react';
 import { useApp } from '../context/AppContext';
-import { History, Shield, User, Search } from 'lucide-react';
+import { History, User, Search } from 'lucide-react';
+import { NigeriaFlagLogo } from './NigeriaFlagLogo';
 
 export const Navbar: React.FC = () => {
   const { user, openModal, setActiveTab } = useApp();
@@ -23,15 +24,13 @@ export const Navbar: React.FC = () => {
           className="flex items-center gap-2.5 cursor-pointer group"
           id="brand-logo"
         >
-          <div className="relative w-9 h-9 rounded-xl bg-gradient-to-br from-emerald-400 via-teal-300 to-white p-0.5 shadow-[0_0_15px_rgba(16,185,129,0.4)] group-hover:scale-105 transition-transform">
-            <div className="w-full h-full bg-[#021f14] rounded-[10px] flex items-center justify-center">
-              <Shield className="w-5 h-5 text-white fill-emerald-500/30" />
-            </div>
+          <div className="w-9 h-9 rounded-xl bg-[#0c2d47] border border-[#164d77] flex items-center justify-center shadow-[0_0_15px_rgba(0,210,147,0.3)] group-hover:scale-105 transition-transform p-1">
+            <NigeriaFlagLogo className="w-6 h-6" />
           </div>
           <div className="flex flex-col">
             <div className="flex items-center">
               <span className="text-xl font-black tracking-tight text-white font-['Plus_Jakarta_Sans']">
-                Naija<span className="text-emerald-300">Pay</span>
+                Naija<span className="text-[#00d293]"> Pay</span>
               </span>
             </div>
             <span className="text-[10px] text-emerald-300 font-bold tracking-wider -mt-1 uppercase">

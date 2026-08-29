@@ -23,6 +23,7 @@ import { WithdrawalErrorModal } from './components/WithdrawalErrorModal';
 import { HistoryView } from './components/HistoryView';
 import { WalletView } from './components/WalletView';
 import { ProfileView } from './components/ProfileView';
+import { LoginPage } from './components/LoginPage';
 import { 
   Gift, 
   Sparkles, 
@@ -48,72 +49,9 @@ const MainLayout: React.FC = () => {
     quickDemoLogin 
   } = useApp();
 
-  // If user is not logged in, render the Auth Gateway
+  // If user is not logged in, render the login requirement screen directly
   if (!user) {
-    return (
-      <div className="min-h-screen bg-[#02180f] text-slate-100 flex flex-col justify-between p-4 sm:p-6 font-['Plus_Jakarta_Sans',sans-serif]">
-        <div className="max-w-md w-full mx-auto my-auto space-y-6 text-center">
-          {/* Logo */}
-          <div className="relative w-16 h-16 rounded-3xl bg-gradient-to-br from-emerald-400 via-teal-300 to-white p-0.5 mx-auto shadow-[0_0_30px_rgba(16,185,129,0.5)]">
-            <div className="w-full h-full bg-[#032316] rounded-[22px] flex items-center justify-center">
-              <Shield className="w-9 h-9 text-emerald-300 fill-emerald-500/20" />
-            </div>
-          </div>
-
-          <div>
-            <h1 className="text-3xl font-black text-white tracking-tight">
-              Naija<span className="text-emerald-300">Pay</span>
-            </h1>
-            <p className="text-xs text-emerald-200/80 mt-1 max-w-xs mx-auto">
-              Daily earnings reward platform with instant settlement to all Nigerian bank accounts.
-            </p>
-          </div>
-
-          {/* Welcome Bonus Callout */}
-          <div className="p-5 rounded-3xl bg-[#04281a] border-2 border-emerald-500/40 text-center shadow-xl relative overflow-hidden">
-            <div className="inline-flex items-center gap-1 bg-white/20 text-white border border-white/40 text-[10px] font-bold px-2.5 py-0.5 rounded-full mb-2">
-              <Sparkles className="w-3 h-3 text-emerald-300" /> OFFICIAL REGISTRATION GIFT
-            </div>
-            <div className="text-xs text-emerald-200/90 font-medium">New Sign-Up Bonus</div>
-            <div className="text-3xl font-black text-white font-mono my-1 drop-shadow-md">
-              ₦30,000.00
-            </div>
-            <div className="text-[11px] text-emerald-300 flex items-center justify-center gap-1 font-bold">
-              <ShieldCheck className="w-3.5 h-3.5 text-white" /> Instant Bank Payout Eligible
-            </div>
-          </div>
-
-          {/* Action Buttons */}
-          <div className="space-y-3">
-            <button
-              id="auth-signup-btn"
-              onClick={() => openModal('auth')}
-              className="w-full bg-gradient-to-r from-emerald-400 via-teal-400 to-emerald-300 hover:from-emerald-300 hover:to-teal-300 text-slate-950 font-black py-3.5 px-6 rounded-2xl shadow-[0_0_25px_rgba(16,185,129,0.4)] flex items-center justify-center gap-2 text-sm transition-all active:scale-95 cursor-pointer"
-            >
-              <span>Get Started / Create Account</span>
-              <ChevronRight className="w-4 h-4 stroke-[3]" />
-            </button>
-
-            <button
-              id="auth-demo-btn"
-              onClick={quickDemoLogin}
-              className="w-full bg-white hover:bg-emerald-50 text-emerald-950 font-black py-3.5 px-6 rounded-2xl flex items-center justify-center gap-2 text-sm transition-all active:scale-95 shadow-md cursor-pointer"
-            >
-              <LogIn className="w-4 h-4" />
-              <span>One-Click Instant Demo Login</span>
-            </button>
-          </div>
-        </div>
-
-        {/* Footer info */}
-        <div className="text-center text-[10px] text-emerald-400/60 max-w-xs mx-auto">
-          Secured by Central Bank of Nigeria (CBN) approved NIP clearing rails. 256-bit encryption.
-        </div>
-
-        {/* Modals */}
-        <AuthModal />
-      </div>
-    );
+    return <LoginPage />;
   }
 
   return (

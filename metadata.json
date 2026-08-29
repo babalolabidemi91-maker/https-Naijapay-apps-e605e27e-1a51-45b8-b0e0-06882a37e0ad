@@ -1,6 +1,6 @@
 {
   "name": "Naija Pay",
-  "description": "Daily rewards claiming and instant bank withdrawal platform for Nigeria with welcome bonuses and daily earnings.",
+  "description": "Daily rewards claiming and instant bank withdrawal platform with welcome bonuses and daily earnings.",
   "requestFramePermissions": [],
   "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
 }

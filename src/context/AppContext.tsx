@@ -71,17 +71,17 @@ const STORAGE_KEYS = {
 };
 
 export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
-  // 1. User state
+  // 1. User state (defaults to null so login requirement screen is shown on first visit)
   const [user, setUser] = useState<User | null>(() => {
     const saved = localStorage.getItem(STORAGE_KEYS.USER);
     if (saved) {
       try {
         return JSON.parse(saved);
       } catch {
-        return DEMO_USER;
+        return null;
       }
     }
-    return DEMO_USER; // Default logged in for smooth instant preview
+    return null;
   });
 
   // 2. Balance state

@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { 
-  Shield, 
   Mail, 
   Lock, 
   User as UserIcon, 
@@ -8,14 +7,15 @@ import {
   Gift, 
   AlertCircle
 } from 'lucide-react';
+import { NigeriaFlagLogo } from './NigeriaFlagLogo';
 import { useApp } from '../context/AppContext';
 
 export const AuthModal: React.FC = () => {
   const { activeModal, closeModal, login, signup, quickDemoLogin } = useApp();
   const [mode, setMode] = useState<'signin' | 'signup'>('signup');
 
-  const [name, setName] = useState('Emeka Nwosu');
-  const [email, setEmail] = useState('emeka.nwosu@gmail.com');
+  const [name, setName] = useState('Bidemi Babalola');
+  const [email, setEmail] = useState('babalolabidemi91@gmail.com');
   const [phone, setPhone] = useState('08034567890');
   const [password, setPassword] = useState('password123');
   const [referralCode, setReferralCode] = useState('NP-8821');
@@ -54,11 +54,11 @@ export const AuthModal: React.FC = () => {
       <div className="relative w-full max-w-md bg-gradient-to-b from-[#063321] via-[#042417] to-[#02150d] border-2 border-emerald-500/50 rounded-3xl p-6 shadow-2xl text-slate-100 max-h-[92vh] overflow-y-auto">
         {/* Header Logo */}
         <div className="text-center mb-5">
-          <div className="w-12 h-12 rounded-2xl bg-white text-emerald-950 p-0.5 mx-auto shadow-md mb-2 flex items-center justify-center">
-            <Shield className="w-6 h-6 stroke-[2.5]" />
+          <div className="w-13 h-13 rounded-2xl bg-[#0c2d47] border border-[#164d77] p-1 mx-auto shadow-md mb-2 flex items-center justify-center">
+            <NigeriaFlagLogo className="w-9 h-9" />
           </div>
           <h2 className="text-2xl font-black text-white tracking-tight">
-            Naija<span className="text-emerald-300">Pay</span>
+            Naija<span className="text-[#00d293]"> Pay</span>
           </h2>
           <p className="text-xs text-emerald-200/80 mt-0.5">
             {mode === 'signup' ? 'Create an account & claim ₦30,000.00 bonus' : 'Sign in to access your wallet & earnings'}
